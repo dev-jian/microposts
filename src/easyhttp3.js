@@ -2,12 +2,7 @@ class EasyHTTP {
   // make a http get request
   async get(url) {
     const res = await fetch(url);
-
-    let data = null;
-
-    if (res.ok) {
-      data = await res.json();
-    }
+    const data = await res.json();
 
     return data;
   }
@@ -22,12 +17,8 @@ class EasyHTTP {
       body: JSON.stringify(dataToSend)
     });
     
-    let data = null;
-
-    if (res.ok) {
-      data = await res.json();
-    }
-
+    const data = await res.json();
+    
     return data;
   }
 
@@ -40,11 +31,7 @@ class EasyHTTP {
       body: JSON.stringify(dataToSend)
     });
     
-    let data = null;
-
-    if (res.ok) {
-      data = await res.json();
-    }
+    const data = await res.json();
 
     return data;
   }
@@ -55,12 +42,8 @@ class EasyHTTP {
       method: "DELETE"
     });
 
-    let data = null;
-
-    if (res.ok) {
-      data = "Delete Success";
-    }
-
+    const data = "Delete Success";
+    
     return data;
   }
 }

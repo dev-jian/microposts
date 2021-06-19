@@ -1,5 +1,6 @@
 class UI {
   constructor () {
+    this.postContainer = document.querySelector(".postsContainer");
     this.post = document.querySelector("#posts");
     this.titleInput = document.querySelector("#title");
     this.bodyInput = document.querySelector("#body");
@@ -29,6 +30,32 @@ class UI {
     });
 
     this.post.innerHTML = output;
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector("div.alert");
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  showAlert(msg, className) {
+    this.clearAlert();
+
+    const div = document.createElement("div");
+    div.className = className;
+    div.appendChild(document.createTextNode(msg));
+    this.postContainer.insertBefore(div, this.post);
+
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  clearFields() {
+    this.titleInput.value = "";
+    this.bodyInput.value = "";
   }
 }
 
