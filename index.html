@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microposts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">MicroPosts</a>
+    </div>
+  </nav>
+  <div class="container postsContainer">
+    <div class="card card-body card-form">
+      <h1>Say Something</h1>
+      <p class="lead">What's on your mind?</p>
+      <div class="form-group mb-3">
+        <input type="text" id="title" class="form-control" placeholder="Post Title">
+      </div>
+      <div class="form-group mb-3">
+        <textarea id="body" class="form-control" placeholder="Post Body"></textarea>
+      </div>
+      <input type="hidden" id="id" value="">
+      <button type="submit" class="btn btn-success post-submit">Post It</button>
+      <span class="form-end"></span>
+    </div>
+    <br>
+    <div id="posts"></div>
+  </div>
+  
+  <footer class="mt-5 p-3 text-center bg-light">
+    MicroPosts &copy;
+  </footer>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
