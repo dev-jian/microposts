@@ -1,29 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "Post One",
-      "body": "This is post one"
-    },
-    {
-      "title": "qwd",
-      "body": "qwd",
-      "id": 2
-    },
-    {
-      "title": "qwd",
-      "body": "qwd",
-      "id": 3
-    },
-    {
-      "title": "asf",
-      "body": "asf",
-      "id": 4
-    },
-    {
-      "title": "qwd",
-      "body": "qwd",
-      "id": 5
+      "title": "devjian",
+      "body": "test",
+      "id": 1
     }
   ]
 }

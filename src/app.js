@@ -2,7 +2,7 @@ import { easyHttp } from './easyhttp3.js';
 import { ui } from './ui.js';
 
 const URLs = {
-  base: "http://localhost:3000",
+  base: "http://121.186.41.180:3000",
   getAllPosts: "/posts",
   addPost: "/posts"
 };
@@ -26,7 +26,7 @@ function getPosts() {
 
 // Submit Post
 function submitPost(e) {
-  console.log(e);
+  console.log(e.type);
   const title = document.querySelector("#title").value;
   const body = document.querySelector("#body").value;
 
