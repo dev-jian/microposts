@@ -1,6 +1,6 @@
 class UI {
   constructor () {
-    this.postContainer = document.querySelector(".postsContainer");
+    this.postsContainer = document.querySelector(".postsContainer");
     this.post = document.querySelector("#posts");
     this.titleInput = document.querySelector("#title");
     this.bodyInput = document.querySelector("#body");
@@ -46,7 +46,7 @@ class UI {
     const div = document.createElement("div");
     div.className = className;
     div.appendChild(document.createTextNode(msg));
-    this.postContainer.insertBefore(div, this.post);
+    document.querySelector(".container").insertBefore(div, this.postsContainer);
 
     setTimeout(() => {
       this.clearAlert();
@@ -54,8 +54,45 @@ class UI {
   }
 
   clearFields() {
+    this.idInput.value = "";
     this.titleInput.value = "";
     this.bodyInput.value = "";
+  }
+
+  fillForm(dataToSend) {
+    document.querySelector("#id").value = dataToSend.id;
+    document.querySelector("#title").value = dataToSend.title;
+    document.querySelector("#body").value = dataToSend.body;
+
+    this.changeFormState("edit");
+  }
+
+  changeFormState(type) {
+    if (this.forState === "add" && type === "edit") {
+      this.postSubmit.textContent = "Update Post";
+      this.postSubmit.className = "post-submit btn btn-warning mb-2";
+
+      const button = document.createElement("button");
+      button.setAttribute("type", "button");
+      button.className = "post-cancel btn btn-secondary";
+      button.textContent = "Cancel Edit";
+
+      document.querySelector(".card").insertBefore(button, document.querySelector(".form-end"));
+      this.forState = "edit";
+    } else if (this.forState === "edit" && type === "add"){
+      this.clearFields();
+
+      this.postSubmit.textContent = "Post It";
+      this.postSubmit.className = "post-submit btn btn-success mb-2";
+
+      const postCancelBtn = document.querySelector(".post-cancel");
+
+      if (postCancelBtn) {
+        postCancelBtn.remove();
+      }
+
+      this.forState = "add";
+    }
   }
 }
 
